@@ -1,0 +1,146 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmp3chvg023gk"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_od2x5"]
+[ext_resource type="Texture2D" uid="uid://cohqhith7derg" path="res://assets/background.png" id="2_y4p7s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mgl4t"]
+texture = ExtResource("2_y4p7s")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtxfb"]
+bg_color = Color(0.31802, 0.31802, 0.31802, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 18.0
+expand_margin_top = 18.0
+expand_margin_right = 18.0
+expand_margin_bottom = 18.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nkuhv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0nj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e86iu"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cmrt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwwvg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="SystemFont" id="SystemFont_3p3n7"]
+font_italic = true
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_od2x5")
+
+[node name="Background_Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_mgl4t")
+
+[node name="Overlay_Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center_VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -202.5
+offset_right = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 5
+
+[node name="Game_Name" type="Label" parent="Center_VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtxfb")
+text = "TANK BATTLE FEVER"
+
+[node name="Options_VBox" type="VBoxContainer" parent="Center_VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Play_Button" type="Button" parent="Center_VBox/Options_VBox"]
+material = SubResource("CanvasItemMaterial_nkuhv")
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_focus_color = Color(0.101726, 0.132161, 0.140528, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_jq0nj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e86iu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4cmrt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwwvg")
+text = "PLAY"
+
+[node name="Setting_Button" type="Button" parent="Center_VBox/Options_VBox"]
+material = SubResource("CanvasItemMaterial_nkuhv")
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_focus_color = Color(0.101726, 0.132161, 0.140528, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_jq0nj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e86iu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4cmrt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwwvg")
+text = "SETTINGS"
+
+[node name="Quit_Button" type="Button" parent="Center_VBox/Options_VBox"]
+material = SubResource("CanvasItemMaterial_nkuhv")
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_focus_color = Color(0.101726, 0.132161, 0.140528, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_jq0nj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e86iu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4cmrt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwwvg")
+text = "QUIT"
+
+[node name="Game_Footer" type="Label" parent="Center_VBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 6
+theme_override_fonts/font = SubResource("SystemFont_3p3n7")
+theme_override_font_sizes/font_size = 25
+text = "by Ravenous Habitat"
